@@ -1,0 +1,21 @@
+use my_first_db
+
+db.createCollection("students")
+
+db.students.insert({name: "Quang", home_state: "WA", lucky_number: 7, birthday: {month: 7, day: 11, year: 1996}})
+db.students.insert({name: "Ashwin", home_state: "CA", lucky_number: 8, birthday: {month: 6, day: 11, year: 1996}})
+db.students.insert({name: "Isabell", home_state: "AUT", lucky_number: -1, birthday: {month: 3, day: 6, year: 1991}})
+db.students.insert({name: "Neil", home_state: "CA", lucky_number: 4, birthday: {month: 10, day: 4, year: 1993}})
+db.students.insert({name: "Lucas", home_state: "AUT", lucky_number: 1, birthday: {month: 5, day: 2, year: 1989}})
+
+db.students.find()
+
+db.students.find({ $or [{home_state: "CA"},{home_state: "WA"})]}
+
+db.students.find({lucky_number: {$gt: 3}})
+
+db.students.find({lucky_number: {$lte: 10}})
+
+db.students.find({ $and [{lucky_number: {$gte: 1}},{lucky_number: {$lte: 9}})]}
+
+db.students.update({},{$set: {'interests':['coding', 'brunch', 'MongoDB']}})
