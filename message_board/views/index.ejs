@@ -18,10 +18,10 @@
         <input type="submit" value="Post message">
     </form>
 
-    <% for (message in messages) { %>
+    <% for (var message in messages) { %>
         <p>Name: <%= message.name %></p>
         <p>Message: <%= message.message %></p>
-        <% for (comment in message) { %>
+        <% for (var comment in message) { %>
             <p>Name: <%= comment.name %></p>
             <p>Comment: <%= comment.comment %></p>
         <% } %>
@@ -30,10 +30,11 @@
             <br>
             <input type="text" name="name">
             <br>
-            Message:
+            Comment:
             <br>
             <textarea name="comment" cols="30" rows="10"></textarea>
             <br>
+            <input type="hidden" name="message_id" value="<%= message.id %>">
             <input type="submit" value="Post comment">
         </form>
     <% } %>
