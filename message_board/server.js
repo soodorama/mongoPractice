@@ -5,7 +5,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
 app.use(express.static(path.join(__dirname, './static')));
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/quoting_dojo");
+mongoose.connect("mongodb://localhost/message_board");
 // var QuoteSchema = new mongoose.Schema({
 //     name: {type: String, required: true, minlength: 3},
 //     quote: {type: String, required: true, minlength: 10},
